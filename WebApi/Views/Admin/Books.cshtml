@@ -1,0 +1,32 @@
+﻿@model IEnumerable<Library.Domain.Entities.Book>
+
+<h2>Books</h2>
+
+<p>
+    <a href="/admin/books/create">Create New</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Category</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Title</td>
+                <td>@item.Author.Name</td>
+                <td>@item.Category.Name</td>
+                <td>
+                    <a href="/admin/books/edit/@item.Id">Edit</a> |
+                    <a href="/admin/books/delete/@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,13 @@
+@model Library.Domain.Entities.Author
+
+<h1>Edit Author</h1>
+
+<form asp-action="Edit">
+    <input type="hidden" asp-for="Id" />
+    <div class="form-group">
+        <label asp-for="Name"></label>
+        <input asp-for="Name" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-primary">Save</button>
+</form>
+<a asp-action="Index">Back to List</a>
